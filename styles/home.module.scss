@@ -137,8 +137,9 @@ $primaryColour: #00dd59;
       border-radius: 25px;
       position: relative;
       z-index: 1;
-      background: transparent linear-gradient(90deg, #222222 0%, #1b1b1b 100%)
-        0% 0% no-repeat padding-box;
+      // background: transparent linear-gradient(90deg, #222222 0%, #1b1b1b 100%)
+      //   0% 0% no-repeat padding-box;
+      background: black;
       transition: all 0.4s ease;
       border: 1px solid transparent;
       overflow: hidden;
