@@ -5,25 +5,11 @@ import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 export default function Home() {
   const sliderRef = useRef(null);
-  const trackRef = useRef(null);
   const [width, setWidth] = useState(0);
-  const [trackWidth, setTrackWidth] = useState(0);
-  const [draggedDistance, setDragDistance] = useState(0);
   const text = "//Working in the shadows to turn your_";
-  function onDrag(event, info) {
-    let x = info.offset.x;
-    const percentage = x / trackWidth;
-    let dragAmount = width * percentage;
-    if (dragAmount > width) {
-      dragAmount = width;
-    } else if (dragAmount < 10) {
-      dragAmount = 0;
-    }
-    setDragDistance(dragAmount);
-  }
+
   useEffect(() => {
     setWidth(sliderRef.current.scrollWidth - sliderRef.current.offsetWidth);
-    setTrackWidth(trackRef.current.offsetWidth);
   }, []);
 
   return (
@@ -86,9 +72,8 @@ export default function Home() {
           <div className={styles.serviceSlider} ref={sliderRef}>
             <motion.div
               className={styles.innerSlider}
-              style={{
-                transform: `translateX(-${draggedDistance}px)`,
-              }}
+              drag="x"
+              dragConstraints={{ left: -width, right: 0 }}
             >
               <article className={styles.service}>
                 <span>
@@ -121,20 +106,6 @@ export default function Home() {
                 </span>
               </article>
             </motion.div>
-            <div className={styles.track} ref={trackRef}>
-              <motion.div
-                className={styles.thumb}
-                drag="x"
-                dragConstraints={{
-                  right: trackWidth - 5,
-                  left: 0,
-                }}
-                dragElastic={0}
-                dragPropagation
-                dragMomentum={true}
-                onDrag={(event, info) => onDrag(event, info)}
-              ></motion.div>
-            </div>
           </div>
         </div>
       </main>
