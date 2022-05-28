@@ -73,6 +73,7 @@ export default function Home() {
             <motion.div
               className={styles.innerSlider}
               drag="x"
+              dragMomentum={false}
               dragConstraints={{ left: -width, right: 0 }}
             >
               <article className={styles.service}>
