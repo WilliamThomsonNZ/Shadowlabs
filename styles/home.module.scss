@@ -130,7 +130,7 @@ $primaryColour: #00dd59;
     padding-bottom: 45px;
 
     .service {
-      min-width: 288px;
+      width: 288px;
       padding: 30px 25px;
       text-align: center;
       color: #fff;
@@ -148,7 +148,7 @@ $primaryColour: #00dd59;
         border-radius: 25px;
         border: 1px solid transparent;
         overflow: hidden;
-        margin-left: 45px;
+        //margin-left: 45px;
         &::after {
           content: "";
           background: $primaryColour 0% 0% no-repeat padding-box;

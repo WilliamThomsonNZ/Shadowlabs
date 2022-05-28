@@ -3,7 +3,8 @@ import Image from "next/image";
 import styles from "../styles/home.module.scss";
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 export default function Home() {
   const sliderRef = useRef(null);
   const [width, setWidth] = useState(0);
@@ -71,10 +72,10 @@ export default function Home() {
           <div className={styles.gradientLine}></div>
           <p className={styles.comingSoonText}>/SHADOWPASS.coming soon</p>
           <div className={styles.serviceSlider} ref={sliderRef}>
-            <motion.div
+            {/* <motion.div
               className={styles.innerSlider}
-              drag="x"
-              dragConstraints={{ left: -width, right: 0 }}
+              // drag="x"
+              // dragConstraints={{ left: -width, right: 0 }}
             >
               <article className={styles.service}>
                 <span>
@@ -106,7 +107,83 @@ export default function Home() {
                   Management
                 </span>
               </article>
-            </motion.div>
+            </motion.div> */}
+            <Swiper
+              spaceBetween={40}
+              slidesPerView={1.5}
+              onSlideChange={() => console.log("slide change")}
+              onSwiper={(swiper) => console.log(swiper)}
+              centerInsufficientSlides={true}
+              grabCursor={true}
+              slidesOffsetBefore={45}
+              slidesOffsetAfter={45}
+              breakpoints={{
+                // when window width is >= 640px
+                600: {
+                  // width: 640,
+                  slidesPerView: 2,
+                },
+                // when window width is >= 768px
+                768: {
+                  // width: 1660,
+                  slidesPerView: 2.5,
+                },
+                900: {
+                  // width: 1660,
+                  slidesPerView: 3,
+                },
+                1200: {
+                  // width: 1660,
+                  slidesPerView: 3.5,
+                },
+              }}
+            >
+              <SwiperSlide>
+                {" "}
+                <article className={styles.service}>
+                  <span>
+                    Marketing &amp; <br />
+                    Strategic Consulting
+                  </span>
+                </article>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <article className={styles.service}>
+                  <span>
+                    Marketing &amp; <br />
+                    Strategic Consulting
+                  </span>
+                </article>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <article className={styles.service}>
+                  <span>
+                    Marketing &amp; <br />
+                    Strategic Consulting
+                  </span>
+                </article>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <article className={styles.service}>
+                  <span>
+                    Marketing &amp; <br />
+                    Strategic Consulting
+                  </span>
+                </article>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <article className={styles.service}>
+                  <span>
+                    Marketing &amp; <br />
+                    Strategic Consulting
+                  </span>
+                </article>
+              </SwiperSlide>
+            </Swiper>
           </div>
         </div>
       </main>
