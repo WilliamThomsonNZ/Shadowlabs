@@ -8,6 +8,7 @@ $primaryColour: #00dd59;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 
   .innerContainer {
     padding: 63px 45px;
@@ -24,6 +25,7 @@ $primaryColour: #00dd59;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 5;
   }
   &::before {
     content: "";
@@ -36,6 +38,7 @@ $primaryColour: #00dd59;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 5;
   }
   .contactNavigation {
     margin-bottom: 86px;
@@ -123,8 +126,7 @@ $primaryColour: #00dd59;
       gap: 40px;
     }
     padding-bottom: 45px;
-    position: relative;
-    z-index: 1;
+
     .service {
       min-width: 288px;
       padding: 30px 25px;
