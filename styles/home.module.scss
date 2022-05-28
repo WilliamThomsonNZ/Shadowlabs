@@ -26,6 +26,7 @@ $primaryColour: #00dd59;
     left: 50%;
     transform: translateX(-50%);
     z-index: 5;
+    backface-visibility: hidden;
   }
   &::before {
     content: "";
@@ -39,6 +40,7 @@ $primaryColour: #00dd59;
     left: 50%;
     transform: translateX(-50%);
     z-index: 5;
+    backface-visibility: hidden;
   }
   .contactNavigation {
     margin-bottom: 86px;
