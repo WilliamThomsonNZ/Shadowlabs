@@ -1,10 +1,12 @@
+import "swiper/css";
+
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/home.module.scss";
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+
 export default function Home() {
   const sliderRef = useRef(null);
   const [width, setWidth] = useState(0);
