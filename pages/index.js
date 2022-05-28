@@ -44,12 +44,16 @@ export default function Home() {
                 <ul>
                   <li className={styles.navigationItem}>Contact</li>
                   <li className={styles.navigationItem}>
-                    <a href="https://twitter.com/_shadowlabs" target="_blank">
+                    <a
+                      href="https://twitter.com/_shadowlabs"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       Twitter
                     </a>
                   </li>
                   <li className={styles.navigationItem}>
-                    <a href="#" target="_blank">
+                    <a href="#" target="_blank" rel="noreferrer">
                       Discord
                     </a>
                   </li>
@@ -69,6 +73,7 @@ export default function Home() {
                 width={957}
                 height={600}
                 layout={"intrinsic"}
+                alt={"Shadow Labs Logo"}
               />
             </div>
             <p className={styles.missionStatement}>
