@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "../styles/home.module.scss";
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+
 export default function Home() {
   const sliderRef = useRef(null);
   const [width, setWidth] = useState(0);
@@ -73,7 +74,6 @@ export default function Home() {
             <motion.div
               className={styles.innerSlider}
               drag="x"
-              dragMomentum={false}
               dragConstraints={{ left: -width, right: 0 }}
             >
               <article className={styles.service}>

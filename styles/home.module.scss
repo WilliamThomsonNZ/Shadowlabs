@@ -14,34 +14,34 @@ $primaryColour: #00dd59;
     padding: 63px 45px;
     width: 100%;
   }
-  &::after {
-    content: "";
-    position: absolute;
-    background: $primaryColour 0% 0% no-repeat padding-box;
-    opacity: 0.46;
-    filter: blur(50px);
-    width: 60%;
-    height: 20px;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 5;
-    backface-visibility: hidden;
-  }
-  &::before {
-    content: "";
-    position: absolute;
-    background: $primaryColour 0% 0% no-repeat padding-box;
-    opacity: 0.46;
-    filter: blur(50px);
-    width: 60%;
-    height: 30px;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 5;
-    backface-visibility: hidden;
-  }
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   background: $primaryColour 0% 0% no-repeat padding-box;
+  //   opacity: 0.46;
+  //   filter: blur(50px);
+  //   width: 60%;
+  //   height: 20px;
+  //   top: 0;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   z-index: 5;
+  //   backface-visibility: hidden;
+  // }
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   background: $primaryColour 0% 0% no-repeat padding-box;
+  //   opacity: 0.46;
+  //   filter: blur(50px);
+  //   width: 60%;
+  //   height: 30px;
+  //   bottom: 0;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   z-index: 5;
+  //   backface-visibility: hidden;
+  // }
   .contactNavigation {
     margin-bottom: 86px;
     ul {
