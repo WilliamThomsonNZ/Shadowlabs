@@ -126,7 +126,7 @@ export default function Home() {
                 className={styles.thumb}
                 drag="x"
                 dragConstraints={{
-                  right: trackWidth,
+                  right: trackWidth - 5,
                   left: 0,
                 }}
                 dragElastic={0}
