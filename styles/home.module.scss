@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+$backgroundColour: #1b1b1b;
+$primaryColour: #00dd59;
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .innerContainer {
+    padding: 63px 45px;
+    width: 100%;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    background: $primaryColour 0% 0% no-repeat padding-box;
+    opacity: 0.46;
+    filter: blur(50px);
+    width: 60%;
+    height: 20px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    background: $primaryColour 0% 0% no-repeat padding-box;
+    opacity: 0.46;
+    filter: blur(50px);
+    width: 60%;
+    height: 30px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .contactNavigation {
+    margin-bottom: 86px;
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navigationItem {
+      list-style: none;
+      margin: 0;
+      letter-spacing: 1.01px;
+      color: #737574;
+      position: relative;
+      a {
+        font-family: Roboto, "Helvetica Neue";
+        font-size: 17px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        height: 17px;
+        width: 2px;
+        left: -11px;
+        box-shadow: 2px 0px 8px $primaryColour;
+        background: $primaryColour;
+      }
+      &:first-of-type {
+        font: normal normal bold 13px/16px Roboto;
+        letter-spacing: 0.94px;
+        color: $primaryColour;
+        opacity: 1;
+        border: none;
+        &::before {
+          background: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  .missionStatement {
+    text-align: left;
+    font: normal normal normal 22px/25px Roboto;
+    letter-spacing: 1.87px;
+    color: #828282;
+    margin-top: 53px;
+    margin-bottom: 46px;
+    .highlight {
+      color: $primaryColour;
+    }
+    &.desktop {
+      display: none;
+    }
+  }
+  .gradientLine {
+    background: transparent
+      linear-gradient(270deg, $primaryColour 0%, $backgroundColour 100%) 0% 0%
+      no-repeat padding-box;
+    height: 2px;
+    width: 100vw;
+    margin-left: -45px;
+    margin-bottom: 62px;
+  }
+  .comingSoonText {
+    font: normal normal normal 14px/32px Roboto;
+    letter-spacing: 1.19px;
+    color: $primaryColour;
+    opacity: 1;
+    margin-bottom: 81px;
+    &.desktop {
+      display: none;
+    }
+  }
+  .serviceSlider {
+    overflow: hidden;
+    scrollbar-color: $primaryColour #707070;
+    width: calc(100vw - 45px);
+    .innerSlider {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    padding-bottom: 45px;
+    position: relative;
+    z-index: 1;
+    .service {
+      min-width: 288px;
+      padding: 30px 25px;
+      text-align: center;
+      color: #fff;
+      border-radius: 25px;
+      position: relative;
+      z-index: 1;
+      background: transparent linear-gradient(90deg, #222222 0%, #1b1b1b 100%)
+        0% 0% no-repeat padding-box;
+      transition: all 0.3 ease;
+      &:first-of-type,
+      &:hover {
+        background: linear-gradient(#222121, #222121) padding-box,
+          linear-gradient(to right, $primaryColour, $backgroundColour)
+            border-box;
+        border-radius: 25px;
+        border: 1px solid transparent;
+        overflow: hidden;
+        &::after {
+          content: "";
+          background: $primaryColour 0% 0% no-repeat padding-box;
+          opacity: 0.46;
+          filter: blur(50px);
+          position: absolute;
+          width: 60px;
+          height: 60px;
+          left: -30px;
+          bottom: -15px;
+          border-radius: 25px;
+          transform: rotate(-45deg);
+          border: 1px solid transparent;
+        }
+      }
+      span {
+        font: normal normal normal 17px/26px Roboto;
+        letter-spacing: 1.22px;
+        color: #ffffff;
+        opacity: 0.84;
+      }
+    }
+  }
+  .track {
+    width: calc(100% - 45px);
+    height: 2px;
+    background: #70707091;
+    margin-top: 54px;
+    display: flex;
+    align-items: center;
+    .thumb {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: $primaryColour;
+      box-shadow: 0px 0px 16px $primaryColour;
+      opacity: 1;
+      cursor: grab;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .container {
+    height: 100vh;
+    .serviceSlider {
+      width: unset;
+    }
+    &::before {
+      filter: blur(80px);
+      width: 150px;
+      height: 150px;
+      bottom: 0px;
+      left: 0;
+      transform: none;
+    }
+    &::after {
+      filter: blur(80px);
+      width: 150px;
+      height: 150px;
+      top: 0px;
+      right: 0;
+      left: unset;
+      transform: none;
+    }
+    .topContainer {
+      display: flex;
+      flex-direction: row-reverse;
+      width: 100%;
+      justify-content: space-between;
+    }
+    .missionStatement {
+      display: none;
+      &.desktop {
+        display: block;
+        max-width: 420px;
+        font: normal normal normal 28px/32px Roboto;
+        letter-spacing: 2.38px;
+        text-align: right;
+        margin-bottom: 100px;
+      }
+    }
+    .comingSoonText {
+      display: none;
+      &.desktop {
+        display: block;
+        font: normal normal normal 19px/32px Roboto;
+        letter-spacing: 1.61px;
+        margin-bottom: 27px;
+      }
+    }
+    .contactNavigation {
+      margin-bottom: 230px;
+      ul {
+        display: block;
+      }
+      .navigationItem {
+        &:first-of-type {
+          font: normal normal bold 19px/23px Roboto;
+        }
+        &::before {
+          opacity: 0;
+          transition: all 0.4s ease-in-out;
+        }
+        &:hover {
+          &::before {
+            opacity: 1;
+            height: 20px;
+          }
+        }
+
+        margin-bottom: 20px;
+        a {
+          font-size: 19px;
+        }
+      }
+    }
+    .desktopInfoContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .gradientLine {
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 70px;
+    }
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    .innerContainer {
+      padding: 130px;
+      max-width: 1920px;
+    }
+  }
+}
+
+@media (min-width: 1800px) {
+  .container {
+    .serviceSlider {
+      .track {
+        display: none;
+      }
+    }
+  }
+}
