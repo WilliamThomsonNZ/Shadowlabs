@@ -1,21 +1,43 @@
 import "swiper/css";
-
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/home.module.scss";
-import { motion } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Home() {
-  const sliderRef = useRef(null);
-  const [width, setWidth] = useState(0);
   const text = "//Working in the shadows to turn your_";
-
-  useEffect(() => {
-    setWidth(sliderRef.current.scrollWidth - sliderRef.current.offsetWidth);
-  }, []);
-
+  const swiperBreakpoints = {
+    600: {
+      slidesPerView: 2,
+      slidesOffsetBefore: 45,
+      slidesOffsetAfter: 45,
+    },
+    768: {
+      slidesPerView: 2.5,
+      slidesOffsetBefore: 45,
+      slidesOffsetAfter: 45,
+    },
+    900: {
+      slidesPerView: 3,
+      slidesOffsetBefore: 45,
+      slidesOffsetAfter: 45,
+    },
+    1200: {
+      slidesPerView: 3.5,
+      slidesOffsetBefore: 45,
+      slidesOffsetAfter: 45,
+    },
+    1400: {
+      slidesPerView: 4,
+      slidesOffsetBefore: 130,
+      slidesOffsetAfter: 130,
+    },
+    1700: {
+      slidesPerView: 5,
+      slidesOffsetBefore: 0,
+      slidesOffsetAfter: 0,
+    },
+  };
   return (
     <>
       <Head>
@@ -73,43 +95,7 @@ export default function Home() {
           </div>
           <div className={styles.gradientLine}></div>
           <p className={styles.comingSoonText}>/SHADOWPASS.coming soon</p>
-          <div className={styles.serviceSlider} ref={sliderRef}>
-            {/* <motion.div
-              className={styles.innerSlider}
-              // drag="x"
-              // dragConstraints={{ left: -width, right: 0 }}
-            >
-              <article className={styles.service}>
-                <span>
-                  Marketing &amp; <br />
-                  Strategic Consulting
-                </span>
-              </article>
-              <article className={styles.service}>
-                <span>
-                  Web3
-                  <br />
-                  Integration
-                </span>
-              </article>
-              <article className={styles.service}>
-                <span>
-                  Full Project <br /> Launch Plan
-                </span>
-              </article>
-              <article className={styles.service}>
-                <span>
-                  Smart &amp; Token <br />
-                  Contract Development
-                </span>
-              </article>
-              <article className={styles.service}>
-                <span>
-                  Community <br />
-                  Management
-                </span>
-              </article>
-            </motion.div> */}
+          <div className={styles.serviceSlider}>
             <Swiper
               spaceBetween={40}
               slidesPerView={1.4}
@@ -117,32 +103,7 @@ export default function Home() {
               grabCursor={true}
               slidesOffsetBefore={45}
               slidesOffsetAfter={45}
-              breakpoints={{
-                600: {
-                  slidesPerView: 2,
-                },
-                768: {
-                  slidesPerView: 2.5,
-                },
-                900: {
-                  slidesPerView: 3,
-                },
-                1200: {
-                  slidesPerView: 3.5,
-                  slidesOffsetBefore: 45,
-                  slidesOffsetAfter: 45,
-                },
-                1400: {
-                  slidesPerView: 4,
-                  slidesOffsetBefore: 130,
-                  slidesOffsetAfter: 130,
-                },
-                1700: {
-                  slidesPerView: 5,
-                  slidesOffsetBefore: 0,
-                  slidesOffsetAfter: 0,
-                },
-              }}
+              breakpoints={swiperBreakpoints}
             >
               <SwiperSlide>
                 {" "}
