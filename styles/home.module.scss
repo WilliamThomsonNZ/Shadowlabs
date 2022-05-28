@@ -28,20 +28,20 @@ $primaryColour: #00dd59;
     z-index: 1;
     backface-visibility: hidden;
   }
-  &::before {
-    content: "";
-    position: absolute;
-    background: $primaryColour 0% 0% no-repeat padding-box;
-    opacity: 0.46;
-    filter: blur(50px);
-    width: 60%;
-    height: 30px;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    backface-visibility: hidden;
-  }
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   background: $primaryColour 0% 0% no-repeat padding-box;
+  //   opacity: 0.46;
+  //   filter: blur(50px);
+  //   width: 60%;
+  //   height: 30px;
+  //   bottom: 0;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   z-index: 1;
+  //   backface-visibility: hidden;
+  // }
   .contactNavigation {
     margin-bottom: 86px;
     ul {
@@ -141,29 +141,6 @@ $primaryColour: #00dd59;
       border: 1px solid transparent;
       position: relative;
       overflow: hidden;
-      &::after {
-        content: "";
-        background: $primaryColour 0% 0% no-repeat padding-box;
-        opacity: 1;
-        filter: blur(50px);
-        position: absolute;
-        width: 60px;
-        height: 60px;
-        left: -30px;
-        bottom: -15px;
-        border-radius: 25px;
-        transform: rotate(-45deg);
-        border: 1px solid transparent;
-        opacity: 0;
-        transition: all 0.8s ease;
-      }
-      &:hover {
-        border-color: $primaryColour;
-        &::after {
-          opacity: 1;
-        }
-      }
-
       &:first-of-type {
         background: linear-gradient(#222121, #222121) padding-box,
           linear-gradient(to right, $primaryColour, $backgroundColour)
@@ -219,6 +196,30 @@ $primaryColour: #00dd59;
   .container {
     .serviceSlider {
       width: unset;
+      .service {
+        &::after {
+          content: "";
+          background: $primaryColour 0% 0% no-repeat padding-box;
+          opacity: 1;
+          filter: blur(50px);
+          position: absolute;
+          width: 60px;
+          height: 60px;
+          left: -30px;
+          bottom: -15px;
+          border-radius: 25px;
+          transform: rotate(-45deg);
+          border: 1px solid transparent;
+          opacity: 0;
+          transition: all 0.8s ease;
+        }
+        &:hover {
+          border-color: $primaryColour;
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
     }
     &::before {
       filter: blur(80px);
