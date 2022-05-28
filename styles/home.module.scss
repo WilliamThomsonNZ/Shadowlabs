@@ -142,7 +142,7 @@ $primaryColour: #00dd59;
       border: 1px solid transparent;
       position: relative;
       overflow: hidden;
-      &:first-of-type {
+      &.first {
         background: linear-gradient(#222121, #222121) padding-box,
           linear-gradient(to right, $primaryColour, $backgroundColour)
             border-box;
@@ -196,7 +196,6 @@ $primaryColour: #00dd59;
 @media (min-width: 1000px) {
   .container {
     .serviceSlider {
-      width: unset;
       .service {
         &::after {
           content: "";
@@ -234,8 +233,8 @@ $primaryColour: #00dd59;
       filter: blur(80px);
       width: 150px;
       height: 150px;
-      top: -65px;
-      right: -65px;
+      top: 0;
+      right: 0;
       left: unset;
       transform: none;
     }
@@ -308,6 +307,21 @@ $primaryColour: #00dd59;
     .innerContainer {
       padding: 130px;
       max-width: 1920px;
+    }
+    .serviceSlider {
+      margin-left: -130px;
+    }
+  }
+}
+@media (min-width: 1700px) {
+  .container {
+    .innerContainer {
+      padding: 130px;
+      max-width: 1920px;
+    }
+    .serviceSlider {
+      margin-left: unset;
+      width: unset;
     }
   }
 }
