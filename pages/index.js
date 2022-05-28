@@ -9,7 +9,7 @@ export default function Home() {
   const [width, setWidth] = useState(0);
   const [trackWidth, setTrackWidth] = useState(0);
   const [draggedDistance, setDragDistance] = useState(0);
-
+  const text = "//Working in the shadows to turn your_";
   function onDrag(event, info) {
     let x = info.offset.x;
     const percentage = x / trackWidth;
@@ -60,7 +60,7 @@ export default function Home() {
                 </ul>
               </nav>
               <p className={`${styles.missionStatement} ${styles.desktop}`}>
-                //Working in the shadows to turn your_
+                {text}
                 <span className={styles.highlight}>vision into reality.</span>
               </p>
               <p className={`${styles.comingSoonText} ${styles.desktop}`}>
