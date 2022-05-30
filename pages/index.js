@@ -54,7 +54,15 @@ export default function Home() {
             <div className={styles.desktopInfoContainer}>
               <nav className={styles.contactNavigation}>
                 <ul>
-                  <li className={styles.navigationItem}>Contact</li>
+                  <li className={styles.navigationItem}>
+                    <a
+                      href="https://forms.gle/osQvb3si2dukttMW6"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Contact
+                    </a>
+                  </li>
                   <li className={styles.navigationItem}>
                     <a
                       href="https://twitter.com/_shadowlabs"
