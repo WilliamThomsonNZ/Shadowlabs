@@ -291,9 +291,6 @@ $primaryColour: #00dd59;
       padding: 130px;
       max-width: 1920px;
     }
-    .serviceSlider {
-      //margin-left: -130px;
-    }
   }
 }
 @media (min-width: 1800px) {
@@ -305,6 +302,22 @@ $primaryColour: #00dd59;
     .serviceSlider {
       margin-left: unset;
       width: 100%;
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    .innerContainer {
+      padding: 130px;
+      max-width: 1920px;
+    }
+    .serviceSlider {
+      margin-left: unset;
+      width: 100%;
+      .service {
+        width: 300px;
+      }
     }
   }
 }
