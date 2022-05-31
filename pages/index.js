@@ -1,8 +1,10 @@
 import "swiper/css";
+import "swiper/css/navigation";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/home.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
 
 export default function Home() {
   const text = "//Working in the shadows to turn your_";
@@ -12,27 +14,27 @@ export default function Home() {
       slidesOffsetBefore: 45,
       slidesOffsetAfter: 45,
     },
-    768: {
+    860: {
       slidesPerView: 2.5,
-      slidesOffsetBefore: 45,
-      slidesOffsetAfter: 45,
+      slidesOffsetBefore: 0,
+      slidesOffsetAfter: 0,
     },
-    900: {
+    1000: {
       slidesPerView: 3,
-      slidesOffsetBefore: 45,
-      slidesOffsetAfter: 45,
+      slidesOffsetBefore: 0,
+      slidesOffsetAfter: 0,
     },
     1200: {
       slidesPerView: 3.5,
-      slidesOffsetBefore: 45,
-      slidesOffsetAfter: 45,
+      slidesOffsetBefore: 0,
+      slidesOffsetAfter: 0,
     },
-    1400: {
+    1500: {
       slidesPerView: 4,
-      slidesOffsetBefore: 130,
-      slidesOffsetAfter: 130,
+      slidesOffsetBefore: 0,
+      slidesOffsetAfter: 0,
     },
-    1700: {
+    1800: {
       slidesPerView: 5,
       slidesOffsetBefore: 0,
       slidesOffsetAfter: 0,
@@ -80,8 +82,7 @@ export default function Home() {
                 </ul>
               </nav>
               <p className={`${styles.missionStatement} ${styles.desktop}`}>
-                {text}
-                <span className={styles.highlight}>vision into reality.</span>
+                Our formula. Your future.
               </p>
               <p className={`${styles.comingSoonText} ${styles.desktop}`}>
                 /SHADOWPASS.coming soon
@@ -96,69 +97,70 @@ export default function Home() {
                 alt={"Shadow Labs Logo"}
               />
             </div>
-            <p className={styles.missionStatement}>
-              Working in the shadows to turn your{" "}
-              <span className={styles.highlight}>vision into reality.</span>
-            </p>
+            <p className={styles.missionStatement}>Our formula. Your future.</p>
           </div>
           <div className={styles.gradientLine}></div>
           <p className={styles.comingSoonText}>/SHADOWPASS.coming soon</p>
-          <div className={styles.serviceSlider}>
-            <Swiper
-              spaceBetween={40}
-              slidesPerView={1.4}
-              centerInsufficientSlides={true}
-              grabCursor={true}
-              slidesOffsetBefore={45}
-              slidesOffsetAfter={45}
-              breakpoints={swiperBreakpoints}
-            >
-              <SwiperSlide>
-                {" "}
-                <article className={`${styles.service} ${styles.first}`}>
-                  <span>
-                    Marketing &amp; <br />
-                    Strategic Consulting
-                  </span>
-                </article>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <article className={styles.service}>
-                  <span>
-                    Web3
-                    <br />
-                    Integration
-                  </span>
-                </article>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <article className={styles.service}>
-                  <span>
-                    Full Project <br /> Launch Plan
-                  </span>
-                </article>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <article className={styles.service}>
-                  <span>
-                    Smart &amp; Token <br />
-                    Contract Development
-                  </span>
-                </article>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <article className={styles.service}>
-                  <span>
-                    Community <br />
-                    Management
-                  </span>
-                </article>
-              </SwiperSlide>
-            </Swiper>
+          <div className={styles.sliderOuter}>
+            <div className={styles.serviceSlider}>
+              <Swiper
+                modules={[Navigation]}
+                spaceBetween={40}
+                slidesPerView={1.4}
+                centerInsufficientSlides={true}
+                grabCursor={true}
+                slidesOffsetBefore={45}
+                slidesOffsetAfter={45}
+                breakpoints={swiperBreakpoints}
+                navigation
+              >
+                <SwiperSlide>
+                  {" "}
+                  <article className={`${styles.service} ${styles.first}`}>
+                    <span>
+                      Marketing &amp; <br />
+                      Strategic Consulting
+                    </span>
+                  </article>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <article className={styles.service}>
+                    <span>
+                      Web3
+                      <br />
+                      Integration
+                    </span>
+                  </article>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <article className={styles.service}>
+                    <span>
+                      Full Project <br /> Launch Plan
+                    </span>
+                  </article>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <article className={styles.service}>
+                    <span>
+                      Smart &amp; Token <br />
+                      Contract Development
+                    </span>
+                  </article>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <article className={styles.service}>
+                    <span>
+                      Community <br />
+                      Management
+                    </span>
+                  </article>
+                </SwiperSlide>
+              </Swiper>
+            </div>
           </div>
         </div>
       </main>
