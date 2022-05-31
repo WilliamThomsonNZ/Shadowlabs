@@ -44,10 +44,7 @@ export default function Home() {
     <>
       <Head>
         <title>Shadow Labs</title>
-        <meta
-          name="description"
-          content="Working in the shadows to turn your vision into reality."
-        />
+        <meta name="description" content="Our formula. Your future." />
         <link rel="icon" href="/favicon.png" />
       </Head>
       <main className={styles.container}>
